@@ -5,3 +5,16 @@
 <h1>Details for stylist @Model.Name</h1>
 
 <p>@Html.DisplayNameFor(model => model.Specialty): @Html.DisplayFor(model => model.Specialty)</p>
+
+<hr>
+<h2>Clients:</h2>
+@if (Model.Clients.Count == 0)
+{
+  <p>@Model.Name has no clients yet.</p>
+}
+@foreach (Client client in Model.Clients)
+{
+  <p>client.Name</p>
+}
+
+  <p>@Html.ActionLink("Add Client", "Create", "Client", new {id = Model.Id}, new {@class = "btn btn-warning"})</p>
