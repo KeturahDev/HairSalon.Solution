@@ -12,5 +12,5 @@
 
 @foreach(Stylist stylist in Model)
 {
-  <p>@stylist.Name</p>
+  <p>@Html.ActionLink(stylist.Name, "Details", new {id = stylist.Id}, new {@class = "btn btn-warning"})</p>
 }
