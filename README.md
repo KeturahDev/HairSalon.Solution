@@ -46,12 +46,14 @@ Download the .zip file and extract all files into directory of your choice OR cl
     ```
     CREATE DATABASE `keturah_howard`
     USE keturah_howard;
-    CREATE TABLE `stylists` (
-        `id` int(11) NOT NULL AUTO_INCREMENT,
+    CREATE TABLE `clients` (
+        `clientId` int(11) NOT NULL AUTO_INCREMENT,
         `name` varchar(255) DEFAULT NULL,
-        `specialty` varchar(255) DEFAULT NULL,
-        PRIMARY KEY (`id`)
+        `stylistId` int(11) NOT NULL DEFAULT '0',
+        `email` varchar(255) DEFAULT NULL,
+         PRIMARY KEY (`clientId`)
         );
+
 
     CREATE TABLE `clients` (
         `clientId` int(11) NOT NULL AUTO_INCREMENT,
