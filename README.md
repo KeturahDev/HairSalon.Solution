@@ -54,12 +54,13 @@ Download the .zip file and extract all files into directory of your choice OR cl
         );
 
     CREATE TABLE `clients` (
-        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `clientId` int(11) NOT NULL AUTO_INCREMENT,
         `name` varchar(255) DEFAULT NULL,
-        `stylistId` int(11) DEFAULT NULL,
-        `phoneNumber` int(11) DEFAULT NULL,
-        PRIMARY KEY (`id`)
+        `stylistId` int(11) NOT NULL DEFAULT '0',
+        `phoneNumber` int(11) NOT NULL DEFAULT '0',
+        PRIMARY KEY (`clientId`)
         );
+
     ```
 5. Compile and Run code:
     ```

@@ -3,17 +3,13 @@
 @model HairSalon.Models.Client
 
 <h1>Enter a new client for @ViewBag.Stylist.Name</h1>  
-@* viewbag is correctly injecting information *@
 
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name) //names are correctly assigned...
-
+  @Html.TextBoxFor(model => model.Name) 
   <input id="StylistId" name="StylistId" type="hidden" value="@ViewBag.Stylist.Id"/>
-@*this is correctly assigning information as well, I dont see how this could be overwriting id*@
-
-  @Html.LabelFor(model => model.PhoneNumber) //PHONE NUMBERS ARE EMPTY !!!!!!!!!!
+  @Html.LabelFor(model => model.PhoneNumber) //Phone numbers are still empty
   @Html.TextBoxFor(model => model.PhoneNumber)
   <input type="submit" value="Enter"/>
 }
