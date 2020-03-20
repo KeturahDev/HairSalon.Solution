@@ -1,0 +1,20 @@
+@{Layout="_Layout";}
+
+@model HairSalon.Models.Client
+@* @using HairSalon.Models *@
+
+<h1>Editing @Model.Name's info:</h1>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+
+  @Html.LabelFor(model => model.Email)
+  @Html.TextBoxFor(model => model.Email)
+
+  @Html.HiddenFor(model => model.ClientId)
+  @Html.HiddenFor(model => model.StylistId)
+  <input type="submit" value="make change"/>
+}
+@Html.ActionLink("Back to Client", "Details", new {id = @Model.ClientId},  new { @class = "btn btn-dark btn-large" }) 

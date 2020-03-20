@@ -9,3 +9,4 @@
 <p>@Html.DisplayFor(model => model.Email)</p>
 
 @Html.ActionLink("Back to Stylist", "Details", "Stylist", new {id = @Model.StylistId},  new { @class = "btn btn-dark btn-large" }) 
+@Html.ActionLink("Edit this Client", "Edit", null, new {id = @Model.ClientId},  new { @class = "btn btn-dark btn-large" }) 
