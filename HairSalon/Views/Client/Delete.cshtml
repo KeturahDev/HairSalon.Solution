@@ -1,0 +1,14 @@
+@{Layout="_Layout";}
+
+@model HairSalon.Models.Client
+
+<h1>Deleting Client: @Model.Name</h1>
+
+<p>Are you certain this client is no-longer with us?</p>
+
+@using (Html.BeginForm())
+{
+  <input type="submit" value="yes"/>
+}
+<hr>
+@Html.ActionLink("No", "Details", new {id = @Model.ClientId},  new { @class = "btn btn-dark btn-large" }) 
