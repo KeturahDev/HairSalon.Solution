@@ -1,0 +1,18 @@
+@{Layout = "_Layout";}
+
+@using HairSalon.Models;
+
+@model List<HairSalon.Models.Stylist>;
+
+<h1>Your Stylists</h1>
+
+@if(Model.Count == 0)
+{
+  <p>You currently have no Stylists in your Database.</p>
+  <p>Click the Add Stylist button in the navbar to add a new Stylist.</p>
+}
+
+@foreach(Stylist stylist in Model)
+{
+  <p>@stylist.Name</p>
+}
