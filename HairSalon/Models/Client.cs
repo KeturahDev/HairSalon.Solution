@@ -1,4 +1,4 @@
-namespace HairSalon.Model
+namespace HairSalon.Models
 {
   public class Client 
   {
@@ -6,7 +6,7 @@ namespace HairSalon.Model
     public string Name {get;set;}
     public int SpecialistId {get;set;}
     public int PhoneNumber {get;set;}
-    
+
     // public virtual Stylist Stylist { get; set; }
   }
 }

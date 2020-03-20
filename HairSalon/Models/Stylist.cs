@@ -1,10 +1,12 @@
+using System.Collections.Generic;
+
 namespace HairSalon.Models
 {
   public class Stylist
   {
     public Stylist()
     {
-      this.Restaurants = new HashSet<Client>();
+      this.Clients = new HashSet<Client>();
     }
     public int Id {get;set;}
     public string Name {get;set;}
