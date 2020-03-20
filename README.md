@@ -43,8 +43,22 @@ Download the .zip file and extract all files into directory of your choice OR cl
 
 4. Run the following commands in MySQL to setup this project Database
     ```
-    
+    CREATE DATABASE `keturah_howard`
+    USE keturah_howard;
+    CREATE TABLE `stylists` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `name` varchar(255) DEFAULT NULL,
+        `specialty` varchar(255) DEFAULT NULL,
+        PRIMARY KEY (`id`)
+        );
 
+    CREATE TABLE `clients` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `name` varchar(255) DEFAULT NULL,
+        `stylistId` int(11) DEFAULT NULL,
+        `phoneNumber` int(11) DEFAULT NULL,
+        PRIMARY KEY (`id`)
+        );
     ```
 5. Compile and Run code:
     ```
