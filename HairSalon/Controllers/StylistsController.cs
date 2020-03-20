@@ -39,5 +39,26 @@ namespace HairSalon.Controllers
       selectedStylist.Clients = _db.Clients.Where(client => client.StylistId == selectedStylist.Id).ToList();
       return View(selectedStylist);
     }
+
+    public ActionResult Delete(int id)
+    {
+      Stylist stylistToDelete = _db.Stylists.FirstOrDefault(stylist => stylist.Id == id);
+      return View(stylistToDelete);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult ConfirmDelete(int id)
+    {
+
+      Stylist stylistToDelete = _db.Stylists.FirstOrDefault(stylist => stylist.Id == id);
+      stylistToDelete.Clients = _db.Clients.Where(client => client.StylistId == stylistToDelete.Id).ToList();
+      foreach (Client client in stylistToDelete.Clients)
+      {
+        _db.Clients.Remove(client);
+      }
+      _db.Stylists.Remove(stylistToDelete);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
