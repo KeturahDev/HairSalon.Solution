@@ -2,15 +2,18 @@
 
 @model HairSalon.Models.Client
 
-<h1>Enter a new client for @ViewBag.Stylist.Name</h1> 
-@* Since Client expects models to be the type of client, viewbag is required to reference clients stylist *@
+<h1>Enter a new client for @ViewBag.Stylist.Name</h1>  
+@* viewbag is correctly injecting information *@
 
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name) //names are correctly assigned...
+
   <input id="StylistId" name="StylistId" type="hidden" value="@ViewBag.Stylist.Id"/>
-  @Html.LabelFor(model => model.PhoneNumber)
+@*this is correctly assigning information as well, I dont see how this could be overwriting id*@
+
+  @Html.LabelFor(model => model.PhoneNumber) //PHONE NUMBERS ARE EMPTY !!!!!!!!!!
   @Html.TextBoxFor(model => model.PhoneNumber)
   <input type="submit" value="Enter"/>
 }

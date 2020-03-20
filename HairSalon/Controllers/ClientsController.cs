@@ -19,19 +19,22 @@ namespace HairSalon.Controllers
 
     public ActionResult Create(int id)
     {
-      Stylist stylistOfClient = _db.Stylists.FirstOrDefault(stylist => stylist.Id == id);
-      Console.WriteLine("stylists id = "+ stylistOfClient.Id);
-      ViewBag.Stylist = stylistOfClient;
+      Stylist stylistOfClient = _db.Stylists.FirstOrDefault(stylist => stylist.Id == id); //correctly grabs it
+      // Console.WriteLine("stylists id = "+ stylistOfClient.Id);
+      ViewBag.Stylist = stylistOfClient; //correctly passes in this obj
       return View();
     }
 
-    [HttpPost]
+    [HttpPost] //in the create form is where its getting jacked up
     public ActionResult Create(Client client)
     {
-      _db.Clients.Add(client);
+      //clients are being created with stylist id overwriting their auto incremented ids
       Console.WriteLine("clients id = "+ client.Id);
-      _db.SaveChanges();
-      return RedirectToAction("Details", "Stylist", new {id = client.StylistId});
+      Console.WriteLine("clients StylistId = "+ client.StylistId);
+
+      _db.Clients.Add(client); //works fine
+      _db.SaveChanges(); //yes
+      return RedirectToAction("Details", "Stylist", new {id = client.StylistId}); //correctly directs to pg
     }
   }
 }
