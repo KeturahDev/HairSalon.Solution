@@ -10,7 +10,7 @@ ASP.NET core MVC application using Entity Framework Core and MySQL for a hair sa
 | :------------- |:-------------| :-------------------|
 | Application opens to a spash page| in terminal of project: *click http://localhost:5000* | browser: *splash page* |
 | List of stylist page informs lack of stylists | on splash: *click [your stylist]* | browser: "you dont have any stylists yet" |
-| Ability to Add a new stylist | on splash: *click [Add new stylist]* | browser: *Stylist form displays* |
+| Ability to Add a new stylist | on splash: *click [Add new stylist]* | browser: *Stylist form displays showing new stylist* |
 | List of stylists displays on stylist-form-submit | on form: *click [submit]* | browser: *list of stylists display* |
 | Stylists on list page are clickable- show details | on list: *click [stylist]* | browser: *stylist info displays* |
 | Ability to Add a new client to stylist | on stylist details: *click [add client]* | browser: *client form displays* |
