@@ -29,11 +29,11 @@ Download the .zip file and extract all files into directory of your choice OR cl
 
 1. Clone the repository:
     ```
-    git clone https://github.com/jamisoncozart/Bestaurants
+    git clone https://github.com/KeturahDev/HairSalon.Solution.git
     ```
 2. Change directories into the project working directory:
     ```
-    cd Bestaurants/Bestaurants
+    cd HairSalon.Solution/HairSalon
     ```
 3. Restore all dependencies:
     ```
@@ -64,6 +64,8 @@ Download the .zip file and extract all files into directory of your choice OR cl
         );
 
     ```
+### Open program
+
 5. Compile and Run code:
     ```
     dotnet build
