@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HairSalon.Controllers
 {
-  public class ClientController : Controller
+  public class ClientsController : Controller
   {
     private readonly HairSalonContext _db;
 
-    public ClientController(HairSalonContext db) 
+    public ClientsController(HairSalonContext db) 
     {
       _db = db;
     }
@@ -31,7 +31,7 @@ namespace HairSalon.Controllers
 
       _db.Clients.Add(client);
       _db.SaveChanges(); 
-      return RedirectToAction("Details", "Stylist", new {id = client.StylistId});
+      return RedirectToAction("Details", "Stylists", new {id = client.StylistId});
     }
 
     public ActionResult Details(int id)
@@ -65,7 +65,7 @@ namespace HairSalon.Controllers
       Client clientToDelete = _db.Clients.FirstOrDefault(client => client.ClientId == id);
       _db.Clients.Remove(clientToDelete);
       _db.SaveChanges();
-      return RedirectToAction("Details", "Stylist", new {id = clientToDelete.StylistId});
+      return RedirectToAction("Details", "Stylists", new {id = clientToDelete.StylistId});
     }
   }
 }
