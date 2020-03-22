@@ -9,7 +9,7 @@
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name) 
   <input id="StylistId" name="StylistId" type="hidden" value="@ViewBag.Stylist.Id"/>
-  @Html.LabelFor(model => model.Email) // changed to email because sql is touchy with how great the numbers are thatt are added into the database, and I couldnt get the default number to show
+  @Html.LabelFor(model => model.Email) 
   @Html.TextBoxFor(model => model.Email)
   <input type="submit" value="Enter"/>
 }

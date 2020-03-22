@@ -26,9 +26,6 @@ namespace HairSalon.Controllers
     [HttpPost] 
     public ActionResult Create(Client client)
     {
-      Console.WriteLine("clients id = "+ client.ClientId);
-      Console.WriteLine("clients StylistId = "+ client.StylistId);
-
       _db.Clients.Add(client);
       _db.SaveChanges(); 
       return RedirectToAction("Details", "Stylists", new {id = client.StylistId});

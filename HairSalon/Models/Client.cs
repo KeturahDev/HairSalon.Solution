@@ -6,7 +6,5 @@ namespace HairSalon.Models
     public string Name {get;set;}
     public int StylistId {get;set;}
     public string Email {get;set;}
-
-    // public virtual Stylist Stylist { get; set; }
   }
 }
