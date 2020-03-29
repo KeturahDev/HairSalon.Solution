@@ -55,13 +55,13 @@ Download the .zip file and extract all files into directory of your choice OR cl
         );
 
 
-    CREATE TABLE `clients` (
-        `clientId` int(11) NOT NULL AUTO_INCREMENT,
+    CREATE TABLE `stylists` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
         `name` varchar(255) DEFAULT NULL,
-        `stylistId` int(11) NOT NULL DEFAULT '0',
-        `phoneNumber` int(11) NOT NULL DEFAULT '0',
-        PRIMARY KEY (`clientId`)
+        `specialty` varchar(255) DEFAULT NULL,
+        PRIMARY KEY (`id`)
         );
+;
 
     ```
 ### Open program
